@@ -13,6 +13,8 @@ public class JpaSampleApplication {
 		System.out.println("data = " + data);
 
 
+
+
 		SpringApplication.run(JpaSampleApplication.class, args);
 
 	}
