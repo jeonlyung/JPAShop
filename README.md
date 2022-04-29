@@ -11,12 +11,12 @@ Spring Boot 와 JPA을 이용한 웹 어플리케이션 개발
     - JAVA
 
  - 사용 툴 및 버전
-    - Spring Boot
     - JPA
-    - Gradle
     - HIBERNATE
     - Themeleaf
+    
     - DB : H2
+    - build : Gradle
               
    
 3. 저작권, 라이선스 정보
