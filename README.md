@@ -11,6 +11,7 @@ Spring Boot 와 JPA을 이용한 웹 어플리케이션 개발
     - JAVA
 
  - 사용 툴 및 버전
+    - IntelliJ
     - JPA
     - HIBERNATE
     - Themeleaf
