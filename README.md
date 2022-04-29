@@ -23,4 +23,12 @@ Spring Boot 와 JPA을 이용한 웹 어플리케이션 개발
 3. 저작권, 라이선스 정보
     - inflearn 스프링 부트와 JPA활용1 - 웹 어플리케이션 개발 참조
     - 
-4. 외부 리소스 정보
+4. 핵심 라이브러리
+    - 스프링 MVC
+    - 스프링 ORM
+    - JPA, 하이버네이트
+    - 스프링 데이터 JPA
+    - H2데이터베이스 클라이언트
+    - 커넥션 풀 : HikariCP
+    - WEB(thymeleaf)
+    - 로깅 slf4j & LogBac
