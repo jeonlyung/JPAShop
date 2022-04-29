@@ -12,9 +12,6 @@ public class JpaSampleApplication {
 		String data = hello.getData();
 		System.out.println("data = " + data);
 
-
-
-
 		SpringApplication.run(JpaSampleApplication.class, args);
 
 	}
