@@ -16,3 +16,4 @@ spring:
 logging:
   level:
     org.hibernate.SQL: debug
+    org.hibernate.type:  trace #쿼리 파라미터값 아래줄에 표출되도록 하는 설정

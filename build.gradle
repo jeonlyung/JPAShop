@@ -23,7 +23,16 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-devtools:' /*html 서버 재기동 없이 리플레쉬 가능*/
+
+	/*html 서버 재기동 없이 리플레쉬 가능*/
+	implementation 'org.springframework.boot:spring-boot-devtools:'
+
+	/*
+	쿼리 파라미터 console에 보여주는 외부 라이브러리
+	운영에 배포할 경우는 성능테스트 필수
+	*/
+	implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.8.0")
+
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
 	annotationProcessor 'org.projectlombok:lombok'
