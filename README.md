@@ -32,4 +32,6 @@ Spring Boot 와 JPA을 이용한 웹 어플리케이션 개발
     - 커넥션 풀 : HikariCP
     - WEB(thymeleaf)
     - 로깅 slf4j & LogBack
-    - 
+
+5. 외부 라이브러리 정보
+    - https://github.com/gavlyukovskiy/spring-boot-data-source-decorator
