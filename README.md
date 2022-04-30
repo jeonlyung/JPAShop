@@ -1,10 +1,10 @@
-# JPASample
+# JPAShop
 
 Spring Boot 와 JPA을 이용한 웹 어플리케이션 개발
 
 
 1. 프로젝트의 목적 및 용도
-  - Spring Boot 와 JPA을 사용하여 웹 어플리케이션 개발
+ - Spring Boot 와 JPA을 사용하여 웹 어플리케이션 개발
 
 2. 프로젝트 사용 언어 및 툴
  - 사용언어
