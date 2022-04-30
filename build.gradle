@@ -4,7 +4,7 @@ plugins {
 	id 'java'
 }
 
-group = 'com.example'
+group = 'jpabook'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
@@ -35,6 +35,7 @@ dependencies {
 	}
 }
 
-tasks.named('test') {
+//Junit5 부터 다음 내용을 추가해야 테스트가 인식된다
+test {
 	useJUnitPlatform()
 }
