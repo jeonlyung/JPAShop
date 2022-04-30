@@ -31,4 +31,5 @@ Spring Boot 와 JPA을 이용한 웹 어플리케이션 개발
     - H2데이터베이스 클라이언트
     - 커넥션 풀 : HikariCP
     - WEB(thymeleaf)
-    - 로깅 slf4j & LogBac
+    - 로깅 slf4j & LogBack
+    - 
