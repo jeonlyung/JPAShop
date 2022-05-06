@@ -19,11 +19,7 @@ Spring Boot 와 JPA을 이용한 웹 어플리케이션 개발
     - DB : H2
     - build : Gradle
               
-   
-3. 저작권, 라이선스 정보
-    - inflearn 스프링 부트와 JPA활용1 - 웹 어플리케이션 개발 참조
-    - 
-4. 핵심 라이브러리
+3. 핵심 라이브러리
     - 스프링 MVC
     - 스프링 ORM
     - JPA, 하이버네이트
@@ -32,6 +28,9 @@ Spring Boot 와 JPA을 이용한 웹 어플리케이션 개발
     - 커넥션 풀 : HikariCP
     - WEB(thymeleaf)
     - 로깅 slf4j & LogBack
-
+   
+4. 저작권, 라이선스 정보
+    - inflearn 스프링 부트와 JPA활용1 - 웹 어플리케이션 개발 참조
+   
 5. 외부 라이브러리 정보
     - https://github.com/gavlyukovskiy/spring-boot-data-source-decorator
