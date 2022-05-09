@@ -21,8 +21,11 @@ public class Order {
     @JoinColumn(name = "member_id")     /* Mapping값(Foreign Key) / 연관관계의 주인 */
     private Member member;
 
+    @OneToMany(mappedBy = "order")
     private List<OrderItem> orderItems = new ArrayList<>();
 
+    @OneToOne
+    @JoinColumn(name = "delivery_id")
     private Delivery delivery;
 
     /* Java 8이상 부터 지원(LocalDateTime) */
