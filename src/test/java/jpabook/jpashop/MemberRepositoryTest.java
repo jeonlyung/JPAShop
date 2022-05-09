@@ -23,7 +23,7 @@ public class MemberRepositoryTest {
     public void testMember() throws Exception {
         //given
         Member member = new Member();
-        member.setUsername("memberA");
+        member.setName("memberA");
 
         //when
         Long saveId = memberRepository.save(member);
@@ -31,7 +31,7 @@ public class MemberRepositoryTest {
 
         //then
         Assertions.assertEquals(findMember.getId(), member.getId());
-        Assertions.assertEquals(findMember.getUsername(), member.getUsername());
+        Assertions.assertEquals(findMember.getName(), member.getName());
         Assertions.assertEquals(findMember, member);
         
         //1차 캐시에서 기존에 관리하던 엔티티 가져옴(이론)
