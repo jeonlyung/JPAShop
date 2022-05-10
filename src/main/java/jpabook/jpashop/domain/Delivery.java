@@ -14,7 +14,7 @@ public class Delivery {
     @Column(name = "delivery_id")
     private Long id;
 
-    @OneToOne(mappedBy = "delivery")
+    @OneToOne(mappedBy = "delivery" ,fetch = FetchType.LAZY)  /* fetch Default EAGER이므로 무조건 LAZY로 변경 */
     private Order order;
 
     @Embedded //내장타입
