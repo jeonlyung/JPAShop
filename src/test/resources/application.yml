@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:test  # 외부DB가 아닌 inMemory 환경 (설정 없으면 SpringBoot는 자동으로 inMemory환경에서 돌아가도록 해줌)
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create    # create : 가지고있는 Entity를 Drop 이후 Create하고 애플리케이션 실행 / create-drop : 마지막에 애플리케이션 종료 시점에 drop
+    properties:
+      hibernate:
+#        show_sql: true
+        format_sql: true
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace #쿼리 파라미터값 아래줄에 표출되도록 하는 설정
