@@ -17,7 +17,7 @@ public abstract class Item {
 
     @Id @GeneratedValue
     @Column(name = "item_id")
-    private long id;
+    private Long id;
 
     private String name;            //이름
     private int price;              //가격
@@ -26,7 +26,8 @@ public abstract class Item {
     @ManyToMany(mappedBy = "items")
     private List<Category> categories = new ArrayList<>();
 
-    //비지니스 로직(데이터를 가지고있는 엔티티에 비지니스 메소드가 있는게 응집력이 좋다!) -> 가장 객체지향적인 설계
+    //비지니스 로직
+    //객체지향적인 설계 -> 데이터를 가지고있는 엔티티에 데이터 변화에 대한 비지니스 메소드가 있는게 응집력이 좋다!
     /**
      * stock 증가
      */
