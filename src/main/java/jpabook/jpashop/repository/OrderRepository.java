@@ -11,7 +11,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class OrderRepository {
 
-    public final EntityManager em;
+    private final EntityManager em;
 
     //주문 데이터 저장
     public void save(Order order){
