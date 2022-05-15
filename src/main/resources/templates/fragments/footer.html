@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<div class="footer" th:fragment="footer">
-    <p>&copy; Hello Shop V2</p>
-</div>
+<th:block th:fragment="footerFragment">
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; HSJ</span>
+            </div>
+        </div>
+    </footer>
+</th:block>
+</html>
