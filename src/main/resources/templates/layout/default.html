@@ -7,13 +7,16 @@
 
 <body id="page-top">
 <div id="wrapper">
-  <!-- 사이드바-->
+  <!-- 사이드바
   <th:block th:replace="fragments/sidebar :: sidebarFragment"></th:block>
+  -->
 
   <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
-      <!-- 상단바-->
+      <!-- 상단바
       <th:block th:replace="fragments/topbar :: topbarFragment"></th:block>
+      -->
+
       <!-- 본문-->
       <th:block layout:fragment="content"></th:block>
     </div>
@@ -26,3 +29,4 @@
 <th:block th:replace="fragments/script :: scriptFragment"></th:block>
 </body>
 </html>
+
