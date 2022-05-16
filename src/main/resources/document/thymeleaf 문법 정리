@@ -1,0 +1,4 @@
+1. model에 Object를 담아서 넘기면 html Form 에서 th:object="${memberForm}"로 받을 수 있음
+
+2. Object에 담겨있는 Value들을 th:field="*{name}"로 가져올 수 있음
+    - th:field ==> id, name을 자동으로 맵핑해준다.
