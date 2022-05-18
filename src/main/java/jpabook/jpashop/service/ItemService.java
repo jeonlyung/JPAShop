@@ -16,7 +16,7 @@ public class ItemService {
     private final ItemRepository itemRepository;
 
     @Transactional /* 쓰기 메소드이므로 @Transcational 선언 */
-    public void save(Item item){
+    public void saveItem(Item item){
         itemRepository.save(item);
     }
 
