@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/default}">
+
+<head>
+  <title>Home</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<style>
+      .fieldError {
+          border-color: #bd2130;
+      }
+</style>
+
+<body>
+<th:block layout:fragment="content">
+  <div class="container">
+    <div>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>이름</th>
+          <th>도시</th>
+          <th>주소</th>
+          <th>우편번호</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="member : ${members}">  <!--[thymeleaf] ? 뜻 : Null이면 처리 안하는 예외처리 -->
+          <td th:text="${member.id}"></td>
+          <td th:text="${member.name}"></td>
+          <td th:text="${member.address?.city}"></td>
+          <td th:text="${member.address?.street}"></td>
+          <td th:text="${member.address?.zipcode}"></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div> <!-- /container -->
+</th:block>
+</body>
+</html>
