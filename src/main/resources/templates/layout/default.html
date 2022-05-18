@@ -2,8 +2,6 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
-<!-- 공통 헤더-->
-<th:block th:replace="fragments/header :: headFragment"></th:block>
 
 <body id="page-top">
 <div id="wrapper">
@@ -16,6 +14,8 @@
       <!-- 상단바
       <th:block th:replace="fragments/topbar :: topbarFragment"></th:block>
       -->
+      <!-- 공통 헤더-->
+      <th:block th:replace="fragments/header :: headFragment"></th:block>
 
       <!-- 본문-->
       <th:block layout:fragment="content"></th:block>
