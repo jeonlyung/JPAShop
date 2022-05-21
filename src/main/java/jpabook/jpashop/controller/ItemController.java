@@ -66,7 +66,8 @@ public class ItemController {
 
     //상품 수정 메소드(POST)
     @PostMapping("items/{itemId}/edit")
-    public String updateItem(@ModelAttribute("form") BookForm form){
+    public String updateItem(@PathVariable String itemId, @ModelAttribute("form") BookForm form){
+        //준영속 엔티티(JPA가 관리를 안한다.)
         Book book = new Book();
         book.setId(form.getId());
         book.setName(form.getName());
