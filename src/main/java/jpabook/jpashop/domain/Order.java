@@ -25,7 +25,7 @@ public class Order {
     @JoinColumn(name = "member_id")     /* Mapping값(Foreign Key) / 연관관계의 주인    */
     private Member member;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems = new ArrayList<>();
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)   /* fetch Default EAGER이므로 무조건 LAZY로 변경, cascade : Entity에 객체가 있으면 자동으로 persist */
