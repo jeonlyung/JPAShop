@@ -53,4 +53,12 @@ public class MemberService {
     public Member findOne(Long memberId){
         return memberRepository.findOne(memberId);
     }
+
+    //회원 수정 메소드
+    @Transactional
+    public void update(Long id, String name) {//Member반환 가능하지만 업데이트와 분리 시키는게 좋다.
+        //변경 감지 사용
+        Member member = memberRepository.findOne(id);
+        member.setName(name);
+    }
 }
