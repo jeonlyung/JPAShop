@@ -31,7 +31,7 @@ public class MemberApiController {
                 .map(m -> new MemberDto(m.getName()))
                 .collect(Collectors.toList());// Java 8(List Member --> List Dto 로 변경)
 
-        return new Result(collect.size(), collect);
+가        return new Result(collect.size(), collect); //Result값(Array --> Json) 형태로 변경 [반환 데이터 추가시 유용]
     }
 
     /**
@@ -56,7 +56,6 @@ public class MemberApiController {
     public CreateMemberResponse saveMemberV1(@RequestBody @Valid Member member){ //@RequestBody --> Json으로 온 Body를 Member객체로 다 바꿔줌
         Long id = memberService.join(member);
         return new CreateMemberResponse(id);
-
     }
 
     /**
