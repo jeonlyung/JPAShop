@@ -7,7 +7,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: none #create : table Drop이후 재생성, none : table Drop하지 않음
+      ddl-auto: create #create : table Drop이후 재생성, none : table Drop하지 않음
     properties:
       hibernate:
 #        show_sql: true
@@ -16,4 +16,4 @@ spring:
 logging:
   level:
     org.hibernate.SQL: debug
-    org.hibernate.type:  trace #쿼리 파라미터값 아래줄에 표출되도록 하는 설정
+    org.hibernate.type:  trace #쿼리 파라미가터값 아래줄에 표출되도록 하는 설정
