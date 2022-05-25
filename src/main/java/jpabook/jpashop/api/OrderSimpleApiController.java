@@ -40,11 +40,24 @@ public class OrderSimpleApiController {
         return allOrder;
     }
 
-    @GetMapping("/ap1/v2/simple-orders")
+    @GetMapping("/api/v2/simple-orders")
     public List<SimpleOrderDto> ordersV2(){
         List<Order> orders = orderRepository.findAllDsl(new OrderSearch());
 
         //JsonArray --> List로 변경 로직
+        List<SimpleOrderDto> result = orders.stream()
+                .map(order -> new SimpleOrderDto(order))
+                .collect(Collectors.toList());
+
+        return result;
+    }
+
+    /**
+     * 패치 조인(Fetch Join)
+     */
+    @GetMapping("/api/v3/simple-orders")
+    public List<SimpleOrderDto> ordersV3(){
+        List<Order> orders = orderRepository.findAllWithMemberDelivery();
         List<SimpleOrderDto> result = orders.stream()
                 .map(order -> new SimpleOrderDto(order))
                 .collect(Collectors.toList());
