@@ -65,6 +65,14 @@ public class OrderSimpleApiController {
         return result;
     }
 
+    /**
+     * JPA에서 바로 Dto호출
+     */
+    /*@GetMapping("/api/v4/simple-orders")
+    public List<OrderSimpleApiController, SimpelOrderDto> orderV4(){
+
+    }*/
+
     @Data
     static class SimpleOrderDto{
         private Long orderId;
