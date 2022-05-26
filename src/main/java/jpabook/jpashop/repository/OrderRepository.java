@@ -123,4 +123,16 @@ public class OrderRepository {
                         " join fetch o.delivery d", Order.class
                 ).getResultList();
     }
+
+    /**
+     * 성능 최적화는 되지만 코드 재사용성이 떨어진다.(딱딱함) / 데이터 변경 불가(엔티티가 아닌 Dto로 호출하기 때문에)
+     */
+    public List<OrderSimpleQueryDto> findOrderDtos(){
+        return em.createQuery(
+                "select new jpabook.jpashop.repository.OrderSimpleQueryDto(o.id, m.name, o.orderDate, o.status, d.address) " +
+                        "from Order o" +
+                        " join o.member m" +
+                        " join o.delivery d",OrderSimpleQueryDto.class)
+                .getResultList();
+    }
 }
