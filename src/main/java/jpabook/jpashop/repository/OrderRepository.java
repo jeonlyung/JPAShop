@@ -136,15 +136,13 @@ public class OrderRepository {
                 .getResultList();
     }
 
-    public List<Order> findAllWithItem() {
+    public List<Order> findAllWithItem() {//Fetch 조인해서 distinct 사용할 경우 페이징 처리 불가
         return em.createQuery(
                 "select distinct o from Order o" + //JPA에서 distinct --> 엔티티 id값이 동일하면 중복 제거
                         " join fetch o.member m" +
                         " join fetch o.delivery d" +
                         " join fetch o.orderItems oi" +
                         " join fetch oi.item i", Order.class)
-                .setFirstResult(1)
-                .setMaxResults(100)
                 .getResultList();
     }
 
