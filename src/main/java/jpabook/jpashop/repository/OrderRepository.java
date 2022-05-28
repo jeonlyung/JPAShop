@@ -27,6 +27,7 @@ public class OrderRepository {
         return em.find(Order.class, id);
     }
 
+    //주문 검색 조회(이름, 상태값)
     public List<Order> findAll(OrderSearch orderSearch){
         String jpql = "select o from Order o join o.member m";
 
