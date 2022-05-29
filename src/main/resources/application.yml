@@ -12,6 +12,7 @@ spring:
       hibernate:
 #        show_sql: true
         format_sql: true
+        default_batch_fetch_size: 100 #페이징 처리 in Query 한번에 가져오는 갯수
 
 logging:
   level:
