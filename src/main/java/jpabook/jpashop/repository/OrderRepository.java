@@ -126,6 +126,20 @@ public class OrderRepository {
     }
 
     /**
+     * Join Fetch / 페이징 처리
+     * toOne관계만 Fetch Join
+     */
+    public List<Order> findAllWithMemberDelivery(int offset, int limit) {
+        return em.createQuery(
+                "select o from Order o " +
+                        " join fetch o.member m" +
+                        " join fetch o.delivery d", Order.class)
+                .setFirstResult(offset)
+                .setMaxResults(limit)
+                .getResultList();
+    }
+
+    /**
      * 성능 최적화는 되지만 코드 재사용성이 떨어진다.(딱딱함) / 데이터 변경 불가(엔티티가 아닌 Dto로 호출하기 때문에)
      */
     public List<OrderSimpleQueryDto> findOrderDtos(){
