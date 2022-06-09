@@ -18,12 +18,13 @@ public class OrderQueryRepository {
     public List<OrderQueryDto> findOrderQueryDtos() {
         //루트 조회(toOne 코드를 모두 한번에 조회)
         List<OrderQueryDto> result = findOrders();
+
         //루프를 돌면서 컬렉션 추가(추가 쿼리 실행)
         result.forEach(o -> {
-            List<OrderItemQueryDto> orderItems =
-                    findOrderItems(o.getOrderId());
+            List<OrderItemQueryDto> orderItems = findOrderItems(o.getOrderId());
             o.setOrderItems(orderItems);
         });
+
         return result;
     }
 
@@ -32,11 +33,11 @@ public class OrderQueryRepository {
                 "select new jpabook.jpashop.repository.order.query.OrderItemQueryDto(oi.order.id, i.name, oi.orderPrice, oi.count)" +
                         " from OrderItem oi" +
                         " join oi.item i" +
-                        "where oi.order.id = :orderId", OrderItemQueryDto.class)
+                        " where oi.order.id = :orderId", OrderItemQueryDto.class)
                 .setParameter("orderId", orderId)
                 .getResultList();
-    }
 
+    }
 
     public List<OrderQueryDto> findOrders() {
         return em.createQuery(

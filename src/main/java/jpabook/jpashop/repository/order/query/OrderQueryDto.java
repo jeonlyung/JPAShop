@@ -19,7 +19,6 @@ public class OrderQueryDto {
     private Address address;
     private List<OrderItemQueryDto> orderItems;
 
-    //생성자
     public OrderQueryDto(Long orderId, String name, LocalDateTime orderDate, OrderStatus orderStatus, Address address) {
         this.orderId = orderId;
         this.name = name;
@@ -27,4 +26,5 @@ public class OrderQueryDto {
         this.orderStatus = orderStatus;
         this.address = address;
     }
+
 }
