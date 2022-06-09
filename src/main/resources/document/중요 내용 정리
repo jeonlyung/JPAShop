@@ -27,3 +27,7 @@
 7. 패치 조인 및 페이징처리 한계 돌파
     - ToOne 관계는 패치 조인으로 쿼리수를 최적화하고 나머지는 hibernate.default_batch_fetch_size로 최적화!
     - default_fetch_size : 100~1000 사이를 선택하는 것을 권장!
+
+8. 쿼리 조회 할경우
+     - ToOne은 PetchJoin으로 한번에 가져오고(row수 증가X)
+     - ToMany는 루프를 돌려서 채워 넣자.
