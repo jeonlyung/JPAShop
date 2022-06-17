@@ -1,2 +1,5 @@
 Open Session In View(OSIV) : 하이버네이트
 Open EntityManager In View : JPA
+
+※실무에서 OSIV를 끈 상태로 복잡성을 관리하는 방법 : Command와 Query를 분리
+    - 성능 이슈 있는곳은 OSIV 끄자(트래픽이 많은 API서버)
