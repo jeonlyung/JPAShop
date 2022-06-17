@@ -1,8 +1,11 @@
 plugins {
 	id 'org.springframework.boot' version '2.5.13'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	//QueryDSL 추가
+	id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
 	id 'java'
 }
+
 
 group = 'jpabook'
 version = '0.0.1-SNAPSHOT'
@@ -30,6 +33,12 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-devtools:'
 
 	/*
+	 QueryDSL 추가
+	 */
+	implementation 'com.querydsl:querydsl-jpa'
+	implementation 'com.querydsl:querydsl-apt'
+
+	/*
 	쿼리 파라미터 console에 보여주는 외부 라이브러리
 	운영에 배포할 경우는 성능테스트 필수
 	*/
@@ -44,6 +53,34 @@ dependencies {
 	testImplementation("org.junit.vintage:junit-vintage-engine") {
 		exclude group: "org.hamcrest", module: "hamcrest-core"
 	}
+}
+
+/*
+QueryDSL 추가
+*/
+def querydslDir = 'src/main/generated'
+//def querydslDir = "$buildDir/generated/querydsl"
+
+querydsl {
+	library = "com.querydsl:querydsl-apt"
+	jpa = true
+	querydslSourcesDir = querydslDir
+}
+
+sourceSets {
+	main {
+		java {
+			srcDirs = ['src/main/java', querydslDir]
+		}
+	}
+}
+
+compileQuerydsl{
+	options.annotationProcessorPath = configurations.querydsl
+}
+
+configurations {
+	querydsl.extendsFrom compileClasspath
 }
 
 //Junit5 부터 다음 내용을 추가해야 테스트가 인식된다
