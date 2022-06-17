@@ -13,7 +13,7 @@ spring:
 #        show_sql: true
         format_sql: true
         default_batch_fetch_size: 100 #페이징 처리 in Query 한번에 가져오는 갯수
-#    open-in-view: true
+#    open-in-view: true #OSIV 설정 값
 
 logging:
   level:
