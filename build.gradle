@@ -1,7 +1,6 @@
 plugins {
 	id 'org.springframework.boot' version '2.5.13'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-	//QueryDSL 추가
 	id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
 	id 'java'
 }
@@ -30,13 +29,13 @@ dependencies {
 	/* ByteBuddy */
 	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-hibernate5'
 	/* html 서버 재기동 없이 리플레쉬 가능 */
-	implementation 'org.springframework.boot:spring-boot-devtools:'
+	implementation 'org.springframework.boot:spring-boot-devtools'
 
 	/*
 	 QueryDSL 추가
 	 */
-	implementation 'com.querydsl:querydsl-jpa'
-	implementation 'com.querydsl:querydsl-apt'
+	implementation "com.querydsl:querydsl-jpa"
+	implementation "com.querydsl:querydsl-apt"
 
 	/*
 	쿼리 파라미터 console에 보여주는 외부 라이브러리
@@ -58,30 +57,27 @@ dependencies {
 /*
 QueryDSL 추가
 */
-def querydslDir = 'src/main/generated'
-//def querydslDir = "$buildDir/generated/querydsl"
+def querydslDir = "$buildDir/generated/querydsl"
 
 querydsl {
-	library = "com.querydsl:querydsl-apt"
 	jpa = true
 	querydslSourcesDir = querydslDir
 }
-
 sourceSets {
-	main {
-		java {
-			srcDirs = ['src/main/java', querydslDir]
-		}
-	}
+	main.java.srcDir querydslDir
 }
-
 compileQuerydsl{
 	options.annotationProcessorPath = configurations.querydsl
 }
 
 configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
 	querydsl.extendsFrom compileClasspath
 }
+//querydsl 추가 끝
+
 
 //Junit5 부터 다음 내용을 추가해야 테스트가 인식된다
 test {
