@@ -28,7 +28,7 @@ public class MemberRepositoryTest {
         //when
         memberRepository.save(member);
         Long saveId = member.getId();
-        Member findMember = memberRepository.findOne(saveId);
+        Member findMember = memberRepository.findById(saveId).get();
 
         //then
         Assertions.assertEquals(findMember.getId(), member.getId());
