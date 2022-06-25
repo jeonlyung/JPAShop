@@ -31,9 +31,7 @@ dependencies {
 	/* html 서버 재기동 없이 리플레쉬 가능 */
 	implementation 'org.springframework.boot:spring-boot-devtools'
 
-	/*
-	 QueryDSL 추가
-	 */
+	/* QueryDSL 추가 */
 	implementation "com.querydsl:querydsl-jpa"
 	implementation "com.querydsl:querydsl-apt"
 
@@ -43,14 +41,10 @@ dependencies {
 	*/
 	implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.8.0")
 
-	/*
-	Swagger 사용
-	 */
+	/* Swagger 사용 */
 	implementation 'io.springfox:springfox-swagger2:3.0.0'
 	implementation 'io.springfox:springfox-swagger-ui:3.0.0'
 	implementation("io.springfox:springfox-boot-starter:3.0.0")
-
-
 
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
@@ -63,9 +57,7 @@ dependencies {
 	}
 }
 
-/*
-QueryDSL 추가
-*/
+/* QueryDSL 추가 */
 def querydslDir = "$buildDir/generated/querydsl"
 querydsl {
 	library = "com.querydsl:querydsl-apt"
